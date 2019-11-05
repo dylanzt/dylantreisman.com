@@ -1,0 +1,23 @@
+{
+  "name": "dylantreisman.com",
+  "version": "1.0.0",
+  "description": "Personal website of Dylan Treisman",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "serve src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanzt/dylantreisman.com.git"
+  },
+  "author": "Dylan Treisman",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dylanzt/dylantreisman.com/issues"
+  },
+  "homepage": "https://github.com/dylanzt/dylantreisman.com#readme",
+  "dependencies": {
+    "serve": "^11.2.0"
+  }
+}
