@@ -1,22 +1,36 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: "babel-loader"
       },
       {
         test: /\.html$/,
+        loader: "html-loader"
+      },
+      {
+        test: /\.css$/,
         use: [
+          "style-loader",
           {
-            loader: "html-loader"
-          }
-        ]
-      }
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: {
+                mode: "local",
+                //localIdentName: "[path][local]",
+                context: path.resolve(__dirname, "src"),
+                hashPrefix: "dylantreisman.com",
+              },
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [
