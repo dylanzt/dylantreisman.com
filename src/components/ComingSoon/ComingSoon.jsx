@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./ComingSoon.css"
 
-const DevNotice = () => Feature && (
+const DevNotice = () => featureFlag.devNotice && (
 <p>Build for {process.env.NODE_ENV}</p>
 )
 
