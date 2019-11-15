@@ -7,6 +7,9 @@ import ComingSoon from "./components/ComingSoon/ComingSoon.jsx";
 
 class App extends Component {
   render() {
+    if (!featureFlag.headerFooterLayout) {
+      return <ComingSoon />
+    }
     return (
       <DefaultLayout>
         <ComingSoon />
