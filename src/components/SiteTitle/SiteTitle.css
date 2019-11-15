@@ -1,0 +1,17 @@
+.root {
+    font-family: "Courier New";
+    font-size: 30pt;
+    text-align: center;
+}
+
+.root:hover {
+    color: purple;
+}
+
+.highlight {
+    color: purple;
+}
+
+.root:hover .highlight {
+    color: black;
+}
