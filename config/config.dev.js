@@ -1,5 +1,6 @@
 module.exports = {
     featureFlag: {
-        devNotice: true,
+        lipsum: true,
+        headerFooterLayout: true,
     }
 }
