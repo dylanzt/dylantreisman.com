@@ -31,10 +31,10 @@ class SiteHeader extends React.Component {
 
   render() {
     return (
-      <div className={this.state.topOfPage ? styles.root : styles.rootWithShadow}>
+      <header className={this.state.topOfPage ? styles.root : styles.rootWithShadow}>
         <SiteTitle />
         <SiteNav />
-      </div>
+      </header>
     )
   }
 };
