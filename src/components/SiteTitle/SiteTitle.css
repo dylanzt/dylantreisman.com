@@ -2,16 +2,19 @@
     font-family: "Courier New";
     font-size: 30pt;
     text-align: center;
+    background: none;
 }
 
-.root:hover {
+:hover > .root {
     color: purple;
+    line-height: 20px;
+    text-shadow: 0px 4px 2px rgba(55,55,55,.2)
 }
 
 .highlight {
     color: purple;
 }
 
-.root:hover .highlight {
+:hover > .root > .highlight {
     color: black;
 }
