@@ -3,6 +3,8 @@ import "normalize.css";
 
 import "./Base.css";
 import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout.jsx"
+import Home from "./views/Home/Home.jsx"
+import Resources from "./views/Resources/Resources.jsx"
 import ComingSoon from "./components/ComingSoon/ComingSoon.jsx";
 
 class App extends Component {
@@ -12,7 +14,7 @@ class App extends Component {
     }
     return (
       <DefaultLayout>
-        <ComingSoon />
+        <Home />
       </DefaultLayout>
     );
   }
