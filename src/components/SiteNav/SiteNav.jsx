@@ -8,6 +8,8 @@ const SiteNav = () => (
     <NavElement page="Home" />
     {/* <NavElement page="Resources" /> */}
     {/* <NavElement page="Curriculum Vitae" /> */}
+    {/* <NavElement page="Writings" /> */}
+    {/* <NavElement page="Photography" /> */}
   </div>
 );
 
