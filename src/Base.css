@@ -3,3 +3,7 @@ body {
     font-family: "Optima";
     font-size: 16pt;
 }
+
+a {
+    text-decoration: none;
+}
