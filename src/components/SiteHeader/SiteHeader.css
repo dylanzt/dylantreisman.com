@@ -7,11 +7,11 @@
     width: 100%;
     background-color: #ddd;
     padding: 0 24px;
-    line-height: 72px;
 }
 
 .root::after {
     position: fixed;
+    z-index: -1; /* Allow clicking of nav elements*/
     top: 0;
     left: 0;
     height: 72px;
