@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./SiteHeader.css";
+import styles from "./SiteHeader.scss";
 import SiteTitle from "../SiteTitle/SiteTitle.jsx";
 import SiteNav from "../SiteNav/SiteNav.jsx";
 
@@ -33,7 +33,7 @@ class SiteHeader extends React.Component {
     render() {
         return (
             <header className={
-                this.state.topOfPage ? styles.root : styles.rootWithShadow
+                `${styles.root} ${!this.state.topOfPage && styles.withShadow}`
             }>
                 <SiteTitle />
                 <SiteNav />
