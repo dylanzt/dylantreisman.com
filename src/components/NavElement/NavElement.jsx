@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-import styles from "./NavElement.css";
+import styles from "./NavElement.scss";
 
 const NavElement = (props) => (
     <NavLink

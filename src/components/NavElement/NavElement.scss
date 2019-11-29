@@ -1,13 +1,15 @@
+@import "../../styling/presets.scss";
+
 .root {
-    color: purple;
+    color: $main-colour;
     font-size: 20pt;
     text-align: center;
     margin: 0 20px;
-    line-height: 72px;
+    line-height: $site-header-desktop;
 }
 
 .root:hover {
-    line-height: 68px;
+    line-height: $site-header-desktop - 4px;
     text-shadow: 0 4px 2px rgba(55, 55, 55, 0.2);
 }
 
