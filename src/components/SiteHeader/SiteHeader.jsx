@@ -1,8 +1,11 @@
 import React from "react";
+import classNames from "classnames/bind";
 
 import styles from "./SiteHeader.scss";
 import SiteTitle from "../SiteTitle/SiteTitle.jsx";
 import SiteNav from "../SiteNav/SiteNav.jsx";
+
+const cx = classNames.bind(styles);
 
 class SiteHeader extends React.Component {
     constructor() {
@@ -32,9 +35,10 @@ class SiteHeader extends React.Component {
 
     render() {
         return (
-            <header className={
-                `${styles.root} ${!this.state.topOfPage && styles.withShadow}`
-            }>
+            <header className={cx({
+                root: true,
+                withShadow: !this.state.topOfPage},
+            )}>
                 <SiteTitle />
                 <SiteNav />
             </header>
