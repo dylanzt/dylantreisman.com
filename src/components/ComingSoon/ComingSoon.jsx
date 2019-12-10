@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./ComingSoon.css";
-import Lipsum from "./Lipsum.js";
+import Lipsum from "./Lipsum.jsx";
 
 const ComingSoon = () => (
     <div>
