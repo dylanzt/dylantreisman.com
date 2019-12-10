@@ -11,7 +11,6 @@ const NavElement = (props) => (
 NavElement.propTypes = {
     to: PropTypes.string,
     page: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
 };
 
 export default NavElement;
