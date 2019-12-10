@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./DefaultLayout.css";
 import SiteHeader from "../../components/SiteHeader/SiteHeader.jsx";
@@ -13,5 +14,9 @@ const DefaultLayout = (props) => (
         <SiteFooter />
     </div>
 );
+
+DefaultLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default DefaultLayout;
