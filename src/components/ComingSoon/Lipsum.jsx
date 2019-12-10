@@ -12,5 +12,5 @@ const Lipsum = (props) => (
         <br/>Quisque venenatis quis magna ac volutpat. Duis iaculis augue vehicula ante efficitur, at efficitur nisi feugiat. Nulla mauris tellus, gravida gravida velit sit amet, facilisis facilisis magna. Donec ac dolor eros. Nullam mollis dui id erat faucibus ornare. Vestibulum porta neque quis tincidunt placerat. Cras in lacus quis ligula blandit varius ut quis diam. Aenean lorem odio, tempus eu nulla eget, sodales sollicitudin turpis. In a mi vel diam tempor placerat non id ipsum. Vivamus sagittis ultrices pulvinar. Phasellus egestas, arcu in imperdiet bibendum, libero orci fermentum odio, eu tempus enim elit ac diam.
         <br/>Quisque venenatis quis magna ac volutpat. Duis iaculis augue vehicula ante efficitur, at efficitur nisi feugiat. Nulla mauris tellus, gravida gravida velit sit amet, facilisis facilisis magna. Donec ac dolor eros. Nullam mollis dui id erat faucibus ornare. Vestibulum porta neque quis tincidunt placerat. Cras in lacus quis ligula blandit varius ut quis diam. Aenean lorem odio, tempus eu nulla eget, sodales sollicitudin turpis. In a mi vel diam tempor placerat non id ipsum. Vivamus sagittis ultrices pulvinar. Phasellus egestas, arcu in imperdiet bibendum, libero orci fermentum odio, eu tempus enim elit ac diam.
     </div>
-)
-export default Lipsum
+);
+export default Lipsum;
