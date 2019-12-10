@@ -6,7 +6,7 @@ import DefaultLayout from "../../layouts/DefaultLayout/DefaultLayout.jsx";
 const Error = (props) => (
     <DefaultLayout>
         <h1>Oops...</h1>
-        <p>This page doesn't exist, or has been deleted.</p>
+        <p>This page doesn&apos;t exist, or has been deleted.</p>
     </DefaultLayout>
 );
 
