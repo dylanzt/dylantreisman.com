@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./Resources.css";
+// import styles from "./Resources.css";
 import DefaultLayout from "../../layouts/DefaultLayout/DefaultLayout.jsx";
 
 const Resources = () => (

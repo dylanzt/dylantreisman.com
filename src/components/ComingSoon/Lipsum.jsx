@@ -1,5 +1,7 @@
 // Temporary
 import React from "react";
+import PropTypes from "prop-types";
+
 const Lipsum = (props) => (
     <div className={props.className}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et commodo sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus auctor nisi vitae rutrum feugiat. Aenean tempus dui est, nec dapibus diam ornare id. Aenean urna ipsum, auctor quis cursus sit amet, gravida eget ex. In aliquam, odio sit amet sollicitudin fringilla, ante libero accumsan neque, iaculis volutpat est tortor aliquam mauris. Praesent a posuere magna. In fringilla dignissim quam, eget gravida mauris lobortis ac. Praesent posuere tempor massa sed elementum. Nunc lobortis aliquam diam, pharetra auctor arcu vehicula ut. Donec non elementum orci. Vestibulum eget ligula vitae leo fermentum sagittis a ac arcu.
@@ -13,4 +15,7 @@ const Lipsum = (props) => (
         <br/>Quisque venenatis quis magna ac volutpat. Duis iaculis augue vehicula ante efficitur, at efficitur nisi feugiat. Nulla mauris tellus, gravida gravida velit sit amet, facilisis facilisis magna. Donec ac dolor eros. Nullam mollis dui id erat faucibus ornare. Vestibulum porta neque quis tincidunt placerat. Cras in lacus quis ligula blandit varius ut quis diam. Aenean lorem odio, tempus eu nulla eget, sodales sollicitudin turpis. In a mi vel diam tempor placerat non id ipsum. Vivamus sagittis ultrices pulvinar. Phasellus egestas, arcu in imperdiet bibendum, libero orci fermentum odio, eu tempus enim elit ac diam.
     </div>
 );
+Lipsum.propTypes = {
+    className: PropTypes.string.isRequired,
+};
 export default Lipsum;
