@@ -1,13 +1,13 @@
-const webpack = require("webpack")
-const merge = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require("webpack");
+const merge = require("webpack-merge");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const common = require('./webpack.common.js');
-const config = require("../config/config.prod.js")
+const common = require("./webpack.common.js");
+const config = require("../config/config.prod.js");
 
 module.exports = merge(common, {
-    mode: 'production',
+    mode: "production",
     module: {
         rules: [
             {
@@ -17,20 +17,20 @@ module.exports = merge(common, {
                     {
                         loader: "css-loader",
                         options: {
-                        sourceMap: true,
-                        importLoaders: 1,
-                        modules: {
-                            mode: "local",
-                            localIdentName: "[hash:base64]",
-                            hashPrefix: "dylantreisman.com",
-                        },
+                            sourceMap: true,
+                            importLoaders: 1,
+                            modules: {
+                                mode: "local",
+                                localIdentName: "[hash:base64]",
+                                hashPrefix: "dylantreisman.com",
+                            },
                         },
                     },
                 ],
-              },
+            },
         ]
     },
-    devtool: 'source-map',
+    devtool: "source-map",
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.DefinePlugin({

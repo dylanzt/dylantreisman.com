@@ -3,4 +3,4 @@ module.exports = {
         lipsum: false,
         headerFooterLayout: false,
     }
-}
+};
