@@ -27,12 +27,12 @@ module.exports = merge(common, {
                     },
                 ],
             },
-        ]
+        ],
     },
     devtool: "inline-source-map",
     plugins: [
         new webpack.DefinePlugin({
             "featureFlag": JSON.stringify(config.featureFlag),
-        })
+        }),
     ],
 });

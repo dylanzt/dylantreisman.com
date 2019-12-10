@@ -6,13 +6,13 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: "babel-loader",
             },
             {
                 test: /\.html$/,
-                loader: "html-loader"
+                loader: "html-loader",
             },
-        ]
+        ],
     },
     plugins: [
         new HtmlWebPackPlugin({
