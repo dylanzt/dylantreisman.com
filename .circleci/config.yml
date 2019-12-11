@@ -5,6 +5,8 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
+      - setup_remote_docker
       - run: npm install
       - run: npm run lint
       - run: npm run build
+      - run: docker build . -t "dylantreisman.com:$CIRCLE_SHA1"
