@@ -6,7 +6,12 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: npm install
-      - run: npm run lint
-      - run: npm run build
-      - run: docker build . -t "dylantreisman.com:$CIRCLE_SHA1"
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Build Docker Image
+          command: docker build . -t "dylantreisman.com:$CIRCLE_SHA1"
