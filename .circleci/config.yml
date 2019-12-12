@@ -11,7 +11,12 @@ jobs:
           key: node_modules-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: |
+            if [ -d node_modules ]; then
+              echo "Restored node_modules from cache."
+            else
+              npm ci
+            fi
       - save_cache:
           name: Save Dependency Cache
           key: node_modules-{{ checksum "package-lock.json" }}
