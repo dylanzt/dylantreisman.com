@@ -6,7 +6,12 @@ import styles from "./SiteTitle.css";
 const SiteHeader = () => (
     <div className={styles.root}>
         <Link className={styles.title} to="/">
-            <span className={styles.firstName}>Dylan</span><span className={styles.surname}>Treisman</span>
+            <span className={styles.firstName}>
+                Dylan
+            </span>
+            <span className={styles.surname}>
+                Treisman
+            </span>
         </Link>
     </div>
 );
