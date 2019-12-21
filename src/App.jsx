@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom";
 import "normalize.css";
 
 import "./Base.css";
@@ -9,7 +9,7 @@ import Error from "./views/Error/Error.jsx";
 import ComingSoon from "./components/ComingSoon/ComingSoon.jsx";
 
 const routing = (
-    <Router>
+    <BrowserRouter>
         <div>
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -18,7 +18,7 @@ const routing = (
                 <Route exact component={Error} />
             </Switch>
         </div>
-    </Router>
+    </BrowserRouter>
 );
 
 class App extends Component {

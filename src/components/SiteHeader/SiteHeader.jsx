@@ -23,7 +23,8 @@ class SiteHeader extends React.Component {
 
     adjustStyles() {
         const topThreshold = -30 + 72; // Offset by header height
-        const currentlyTop = document.body.getBoundingClientRect().y >= topThreshold;
+        const currentlyTop =
+            document.body.getBoundingClientRect().y >= topThreshold;
         currentlyTop === this.state.topOfPage || this.setState({
             topOfPage: currentlyTop,
         });
@@ -31,7 +32,9 @@ class SiteHeader extends React.Component {
 
     render() {
         return (
-            <header className={this.state.topOfPage ? styles.root : styles.rootWithShadow}>
+            <header className={
+                this.state.topOfPage ? styles.root : styles.rootWithShadow
+            }>
                 <SiteTitle />
                 <SiteNav />
             </header>
