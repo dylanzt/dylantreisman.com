@@ -1,0 +1,16 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-css-modules"
+    ],
+    "rules": {
+        "indentation": 4,
+        "string-quotes": "double",
+        "max-line-length": 80,
+        "font-family-name-quotes": "always-where-recommended",
+        "function-url-quotes": "always",
+        "selector-attribute-quotes": "always",
+        "font-weight-notation": "named-where-possible",
+        "function-url-no-scheme-relative": true
+    }
+}

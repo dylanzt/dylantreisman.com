@@ -23,8 +23,11 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Lint
-          command: npm run lint
+          name: Lint JavaScript
+          command: npm run eslint
+      - run:
+          name: Lint Styles
+          command: npm run stylelint
       - run:
           name: Build Docker Image
           command: docker build . -t "dylantreisman.com:$CIRCLE_SHA1"
