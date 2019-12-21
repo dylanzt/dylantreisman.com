@@ -11,7 +11,7 @@
 
 .root::after {
     position: fixed;
-    z-index: -1; /* Allow clicking of nav elements*/
+    z-index: -1; /* Allow clicking of nav elements */
     top: 0;
     left: 0;
     height: 72px;
@@ -19,7 +19,7 @@
     padding: 0 24px;
     opacity: 0;
     content: "";
-    box-shadow: 5px 15px 50px rgba(55,55,55,.2);
+    box-shadow: 5px 15px 50px rgba(55, 55, 55, 0.2);
     transition: opacity 0.2s ease-in-out;
 }
 
