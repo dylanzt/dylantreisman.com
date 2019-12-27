@@ -1,1 +1,21 @@
-// Mixins for common functionality
+@mixin from($screen-width) {
+    @media (min-width: $screen-width) {
+        @content;
+    }
+}
+
+@mixin font-size($font-size) {
+    $base-font-size: 18px;
+
+    font-size: $font-size;
+    font-size: ($font-size/$base-font-size) * 1rem;
+}
+
+@mixin text-hover-shadow($line-height) {
+    line-height: $line-height;
+
+    &:hover {
+        line-height: $line-height - 4px;
+        text-shadow: 0 3px 2px rgba(55, 55, 55, 0.2);
+    }
+}

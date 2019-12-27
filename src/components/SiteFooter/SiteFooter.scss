@@ -1,0 +1,8 @@
+@import "../../styling/presets";
+
+.root {
+    height: $site-footer-desktop;
+    padding: $header-footer-padding;
+    background-color: $main-colour-dark;
+    color: $footer-text-colour;
+}

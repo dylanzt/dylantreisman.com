@@ -1,0 +1,38 @@
+@import "./styling/presets";
+
+html {
+    font-family: $standard-font;
+    font-size: 112.5%;
+}
+
+body {
+    background: $site-background;
+}
+
+h1 {
+    @include font-size(42px);
+}
+
+h2 {
+    @include font-size(36px);
+}
+
+h3 {
+    @include font-size(30px);
+}
+
+h4 {
+    @include font-size(24px);
+}
+
+h5 {
+    @include font-size(18px);
+}
+
+h6 {
+    @include font-size(12px);
+}
+
+a {
+    text-decoration: none;
+}

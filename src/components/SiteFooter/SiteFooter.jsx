@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./SiteFooter.css";
+import styles from "./SiteFooter.scss";
 
 const SiteFooter = () => (
     <footer className={styles.root}>
