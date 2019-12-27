@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./DefaultLayout.css";
+import styles from "./DefaultLayout.scss";
 import SiteHeader from "../../components/SiteHeader/SiteHeader.jsx";
 import SiteFooter from "../../components/SiteFooter/SiteFooter.jsx";
 

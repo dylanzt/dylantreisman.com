@@ -1,6 +1,5 @@
 import React from "react";
 
-//import styles from "./Error.css";
 import DefaultLayout from "../../layouts/DefaultLayout/DefaultLayout.jsx";
 
 const Error = () => (

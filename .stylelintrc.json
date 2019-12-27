@@ -14,6 +14,8 @@
         "function-url-quotes": "always",
         "selector-attribute-quotes": "always",
         "font-weight-notation": "named-where-possible",
-        "function-url-no-scheme-relative": true
+        "function-url-no-scheme-relative": true,
+        "unit-blacklist": ["pt"],
+        "scss/at-mixin-argumentless-call-parentheses": "never"
     }
 }

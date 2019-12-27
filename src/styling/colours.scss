@@ -1,9 +1,13 @@
 // Colour Palette
-$black: #000;
-$white: #fff;
-$grey1: #ddd;
-$purple1: #800080;
+$_black: #000;
+$_white: #fff;
+$_grey1: #ddd;
+$_purple1: #800080;
+$_purple2: #320b5e;
 
 // Design Colours
-$site-background: $grey1;
-$main-colour: $purple1;
+$site-background: $_grey1;
+$main-colour: $_purple1;
+$text-colour: $_black;
+$footer-text-colour: $_white;
+$main-colour-dark: $_purple2;

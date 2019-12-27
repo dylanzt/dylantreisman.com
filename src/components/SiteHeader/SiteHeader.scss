@@ -8,16 +8,12 @@
     width: 100%;
 }
 
-@mixin header {
+.root {
     @include header-settings;
 
     display: flex;
     background-color: $site-background;
-    padding: 0 24px;
-}
-
-.root {
-    @include header;
+    padding: $header-footer-padding;
 }
 
 .root::after {

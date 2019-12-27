@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom";
 import "normalize.css";
 
-import "./Base.css";
+import "./Base.scss";
 import Home from "./views/Home/Home.jsx";
 import Resources from "./views/Resources/Resources.jsx";
 import Error from "./views/Error/Error.jsx";

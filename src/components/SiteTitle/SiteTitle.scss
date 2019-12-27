@@ -1,0 +1,28 @@
+@import "../../styling/presets";
+
+.root {
+    @include font-size(40px);
+
+    font-family: $site-title-font;
+    text-align: center;
+}
+
+.title {
+    @include text-hover-shadow($site-header-desktop);
+}
+
+.firstName {
+    color: $text-colour;
+}
+
+.title:hover > .firstName {
+    color: $main-colour;
+}
+
+.surname {
+    color: $main-colour;
+}
+
+.title:hover > .surname {
+    color: $text-colour;
+}

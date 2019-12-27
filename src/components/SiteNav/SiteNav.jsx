@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./SiteNav.css";
+import styles from "./SiteNav.scss";
 import NavElement from "../NavElement/NavElement.jsx";
 
 const SiteNav = () => (
