@@ -1,7 +1,12 @@
+const path = require("path");
+
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
+const src = path.resolve(__dirname, "../src/");
+
 module.exports = {
-    entry: "./src",
+    context: src,
+    entry: "./index.js",
     module: {
         rules: [
             {
@@ -17,11 +22,18 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html",
+            template: "./template.html",
+            filename: "index.html",
         }),
     ],
     resolve: {
         extensions: [".jsx", ".js", ".scss", ".css", ".json"],
+        alias: {
+            src,
+            Components: path.resolve(src, "./components/"),
+            Layouts: path.resolve(src, "./layouts/"),
+            Styling: path.resolve(src, "./styling/"),
+            Views: path.resolve(src, "./views/"),
+        },
     },
 };

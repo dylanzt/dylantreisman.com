@@ -3,10 +3,10 @@ import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom";
 import "normalize.css";
 
 import "./Base.scss";
-import Home from "./views/Home/Home.jsx";
-import Resources from "./views/Resources/Resources.jsx";
-import Error from "./views/Error/Error.jsx";
-import ComingSoon from "./components/ComingSoon/ComingSoon.jsx";
+import Home from "Views/Home";
+import Resources from "Views/Resources";
+import Error from "Views/Error";
+import ComingSoon from "Components/ComingSoon";
 
 const routing = (
     <BrowserRouter>

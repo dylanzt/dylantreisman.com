@@ -2,8 +2,8 @@ import React from "react";
 import classNames from "classnames/bind";
 
 import styles from "./styles";
-import SiteTitle from "../SiteTitle/SiteTitle";
-import SiteNav from "../SiteNav/SiteNav";
+import SiteTitle from "Components/SiteTitle";
+import SiteNav from "Components/SiteNav";
 
 const cx = classNames.bind(styles);
 
