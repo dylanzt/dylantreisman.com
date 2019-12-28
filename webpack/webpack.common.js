@@ -1,15 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+    entry: "./src",
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx)$/i,
                 exclude: /node_modules/,
                 loader: "babel-loader",
             },
             {
-                test: /\.html$/,
+                test: /\.html$/i,
                 loader: "html-loader",
             },
         ],
@@ -20,4 +21,7 @@ module.exports = {
             filename: "./index.html",
         }),
     ],
+    resolve: {
+        extensions: [".jsx", ".js", ".scss", ".css", ".json"],
+    },
 };

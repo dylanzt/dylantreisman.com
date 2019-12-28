@@ -1,7 +1,7 @@
 import React from "react";
 
-import DefaultLayout from "../../layouts/DefaultLayout/DefaultLayout.jsx";
-import ComingSoon from "../../components/ComingSoon/ComingSoon.jsx";
+import DefaultLayout from "../../layouts/DefaultLayout/DefaultLayout";
+import ComingSoon from "../../components/ComingSoon/ComingSoon";
 
 const Home = () => (
     <DefaultLayout>

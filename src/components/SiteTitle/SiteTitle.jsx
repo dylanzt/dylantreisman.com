@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import styles from "./SiteTitle.scss";
+import styles from "./styles";
 
 const SiteHeader = () => (
     <div className={styles.root}>
