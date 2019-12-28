@@ -1,6 +1,6 @@
 import React from "react";
 
-import DefaultLayout from "../../layouts/DefaultLayout/DefaultLayout";
+import DefaultLayout from "Layouts/DefaultLayout";
 
 const Error = () => (
     <DefaultLayout>

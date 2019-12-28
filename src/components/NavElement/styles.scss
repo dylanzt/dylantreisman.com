@@ -1,4 +1,4 @@
-@import "../../styling/presets";
+@import "Styling/presets";
 
 .root {
     @include text-hover-shadow($site-header-desktop);

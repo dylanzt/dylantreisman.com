@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import styles from "./styles";
-import SiteHeader from "../../components/SiteHeader/SiteHeader";
-import SiteFooter from "../../components/SiteFooter/SiteFooter";
+import SiteHeader from "Components/SiteHeader";
+import SiteFooter from "Components/SiteFooter";
 
 const DefaultLayout = (props) => (
     <div>
