@@ -10,7 +10,7 @@ module.exports = merge(common, {
     module: {
         rules: [
             {
-                test: /\.(css|scss)$/,
+                test: /\.(css|scss)$/i,
                 use: [
                     "style-loader",
                     {
@@ -25,7 +25,12 @@ module.exports = merge(common, {
                             },
                         },
                     },
-                    "sass-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
                 ],
             },
         ],

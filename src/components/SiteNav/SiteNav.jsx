@@ -1,7 +1,7 @@
 import React from "react";
 
-import styles from "./SiteNav.scss";
-import NavElement from "../NavElement/NavElement.jsx";
+import styles from "./styles";
+import NavElement from "../NavElement/NavElement";
 
 const SiteNav = () => (
     <div className={styles.root}>
