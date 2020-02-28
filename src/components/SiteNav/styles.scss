@@ -1,5 +1,11 @@
+@import "Styling/presets";
+
 .root {
-    display: flex;
-    justify-content: center;
-    flex: 1;
+    display: none;
+
+    @include from($M) {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
 }

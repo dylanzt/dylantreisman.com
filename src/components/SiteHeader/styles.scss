@@ -4,28 +4,45 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: $site-header-desktop;
+    height: $site-header-mobile;
     width: 100%;
+
+    @include from($M) {
+        height: $site-header-desktop;
+    }
 }
 
 .root {
     @include header-settings;
 
     display: flex;
-    background-color: $site-background;
+    justify-content: space-between;
+    background-color: $site-background-colour;
     padding: $header-footer-padding;
-}
 
-.root::after {
-    @include header-settings;
+    @include from($M) {
+        justify-content: flex-start;
+    }
 
-    z-index: -1; // Allow clicking of links in header
-    opacity: 0;
-    content: "";
-    box-shadow: 5px 15px 50px rgba(55, 55, 55, 0.2);
-    transition: opacity 0.2s ease-in-out;
-}
+    &::before {
+        content: "";
 
-.root.withShadow::after {
-    opacity: 1;
+        @include from($M) {
+            content: none;
+        }
+    }
+
+    &::after {
+        @include header-settings;
+
+        z-index: -1; // Allow clicking of links in header
+        opacity: 0;
+        content: "";
+        box-shadow: 5px 15px 50px rgba(55, 55, 55, 0.2);
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    &.withShadow::after {
+        opacity: 1;
+    }
 }

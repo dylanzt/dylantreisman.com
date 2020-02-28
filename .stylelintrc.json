@@ -21,6 +21,7 @@
                 "ignoreProperties": [ "/^\\$[\\w|-]*-font$/" ]
             }
         ],
+        "selector-pseudo-element-colon-notation": "double",
         "unit-blacklist": ["pt"],
         "scss/at-mixin-argumentless-call-parentheses": "never"
     }

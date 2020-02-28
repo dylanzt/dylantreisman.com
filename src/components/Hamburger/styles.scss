@@ -1,0 +1,24 @@
+@import "Styling/presets";
+
+$hamburger-height: 30px;
+
+.hamburger {
+    margin-top: 7px;
+    width: 40px;
+    height: $hamburger-height;
+    position: relative;
+    border: none;
+    background: none;
+    background-image: url("~Assets/hamburger.svg");
+    background-repeat: no-repeat;
+
+    @include from($M) {
+        display: none;
+    }
+}
+
+.screenReaderText {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+}

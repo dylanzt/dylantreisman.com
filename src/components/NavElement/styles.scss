@@ -1,12 +1,21 @@
 @import "Styling/presets";
 
 .root {
-    @include text-hover-shadow($site-header-desktop);
-    @include font-size(24px);
+    @include text-hover-shadow($site-header-mobile);
+    @include font-size(18px);
 
     color: $main-colour;
     text-align: center;
     margin: 0 20px;
+    white-space: nowrap;
+
+    @include from($M) {
+        @include text-hover-shadow($site-header-desktop);
+    }
+
+    @include from($L) {
+        @include font-size(24px);
+    }
 }
 
 .active {

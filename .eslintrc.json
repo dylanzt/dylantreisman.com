@@ -54,6 +54,12 @@
             "error",
             "always-multiline"
         ],
+        "no-console": [
+            "error"
+        ],
+        "no-alert": [
+            "error"
+        ],
         "max-len": [
             "error",
             {

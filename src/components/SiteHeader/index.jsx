@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import styles from "./styles";
 import SiteTitle from "Components/SiteTitle";
 import SiteNav from "Components/SiteNav";
+import Hamburger from "Components/Hamburger";
 
 const cx = classNames.bind(styles);
 
@@ -41,6 +42,7 @@ class SiteHeader extends React.Component {
             )}>
                 <SiteTitle />
                 <SiteNav />
+                <Hamburger />
             </header>
         );
     }

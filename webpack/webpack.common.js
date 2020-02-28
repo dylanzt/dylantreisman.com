@@ -14,6 +14,12 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: "babel-loader",
             },
+            {
+                test: /\.(png|svg|jpg|gif)$/i,
+                use: [
+                    "file-loader",
+                ],
+            },
         ],
     },
     plugins: [
@@ -23,9 +29,10 @@ module.exports = {
         }),
     ],
     resolve: {
-        extensions: [".jsx", ".js", ".scss", ".css", ".json"],
+        extensions: [".jsx", ".js", ".scss"],
         alias: {
             src,
+            Assets: path.resolve(src, "./assets/"),
             Components: path.resolve(src, "./components/"),
             Layouts: path.resolve(src, "./layouts/"),
             Styling: path.resolve(src, "./styling/"),

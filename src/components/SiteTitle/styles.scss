@@ -1,14 +1,22 @@
 @import "Styling/presets";
 
 .root {
-    @include font-size(40px);
+    @include font-size(25px);
 
     font-family: $site-title-font;
     text-align: center;
+
+    @include from($XS) {
+        @include font-size(40px);
+    }
 }
 
 .title {
-    @include text-hover-shadow($site-header-desktop);
+    @include text-hover-shadow($site-header-mobile);
+
+    @include from($M) {
+        @include text-hover-shadow($site-header-desktop);
+    }
 }
 
 .firstName {
