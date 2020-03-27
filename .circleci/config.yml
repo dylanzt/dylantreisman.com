@@ -1,14 +1,21 @@
 version: 2.1
-jobs:
-  build:
+executors:
+  node:
     docker:
-      - image: circleci/node
+      - image: circleci/node:carbon
+commands:
+  restore_node_modules:
+    description: "Restore node_modules from cache"
     steps:
-      - checkout
-      - setup_remote_docker
       - restore_cache:
           name: Restore Dependency Cache
           key: node_modules-{{ checksum "package-lock.json" }}
+jobs:
+  node_modules:
+    executor: node
+    steps:
+      - checkout
+      - restore_node_modules
       - run:
           name: Install Dependencies
           command: |
@@ -22,12 +29,27 @@ jobs:
           key: node_modules-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
+  lint_js:
+    executor: node
+    steps:
+      - checkout
+      - restore_node_modules
       - run:
           name: Lint JavaScript
           command: npm run eslint
+  lint_styles:
+    executor: node
+    steps:
+      - checkout
+      - restore_node_modules
       - run:
           name: Lint Styles
           command: npm run stylelint
+  build:
+    executor: node
+    steps:
+      - checkout
+      - setup_remote_docker
       - run:
           name: Build Docker Image
           command: docker build . -t "dylantreisman.com:$CIRCLE_SHA1"
@@ -36,3 +58,15 @@ jobs:
           command: |
             docker run -d -p 5000:5000 "dylantreisman.com:$CIRCLE_SHA1"
             ssh remote-docker "curl --retry 5 --retry-delay 5 -v localhost:5000 | grep '<title>Dylan Treisman</title>'"
+workflows:
+  version: 2.1
+  ci:
+    jobs:
+      - node_modules
+      - lint_js:
+          requires:
+            - node_modules
+      - lint_styles:
+          requires:
+            - node_modules
+      - build
