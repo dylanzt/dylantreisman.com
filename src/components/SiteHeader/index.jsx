@@ -40,7 +40,9 @@ class SiteHeader extends React.Component {
                 root: true,
                 withShadow: !this.state.topOfPage},
             )}>
-                <SiteTitle />
+                <div className={styles.titleWrapper}>
+                    <SiteTitle />
+                </div>
                 <SiteNav />
                 <Hamburger />
             </header>

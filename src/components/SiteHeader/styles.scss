@@ -1,5 +1,7 @@
 @import "Styling/presets";
 
+$hamburger-width: 40px;
+
 @mixin header-settings {
     position: fixed;
     top: 0;
@@ -18,7 +20,6 @@
     display: flex;
     justify-content: space-between;
     background-color: $site-background-colour;
-    padding: $header-footer-padding;
 
     @include from($M) {
         justify-content: flex-start;
@@ -26,6 +27,7 @@
 
     &::before {
         content: "";
+        width: $hamburger-width;
 
         @include from($M) {
             content: none;
@@ -44,5 +46,11 @@
 
     &.withShadow::after {
         opacity: 1;
+    }
+}
+
+.titleWrapper {
+    @include from($M) {
+        margin-left: $site-padding-desktop;
     }
 }
