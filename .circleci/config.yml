@@ -10,6 +10,15 @@ commands:
       - restore_cache:
           name: Restore Dependency Cache
           key: node_modules-{{ checksum "package-lock.json" }}
+  restore_docker_image:
+    description: "Restore docker image from workspace"
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+          at: .
+      - run:
+          name: Load Docker Image
+          command: docker load < dylantreisman.com.tar
 jobs:
   node_modules:
     executor: node
@@ -45,7 +54,7 @@ jobs:
       - run:
           name: Lint Styles
           command: npm run stylelint
-  build:
+  build_docker:
     executor: node
     steps:
       - checkout
@@ -53,6 +62,20 @@ jobs:
       - run:
           name: Build Docker Image
           command: docker build . -t "dylantreisman.com:$CIRCLE_SHA1"
+      - run:
+          name: Save Docker Image
+          command: docker save "dylantreisman.com:$CIRCLE_SHA1" > dylantreisman.com.tar
+      - store_artifacts:
+          path: dylantreisman.com.tar
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dylantreisman.com.tar
+  test_docker:
+    executor: node
+    steps:
+      - checkout
+      - restore_docker_image
       - run:
           name: Test Docker Image
           command: |
@@ -69,4 +92,7 @@ workflows:
       - lint_styles:
           requires:
             - node_modules
-      - build
+      - build_docker
+      - test_docker:
+          requires:
+            - build_docker
