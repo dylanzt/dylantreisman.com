@@ -15,6 +15,12 @@
         "selector-attribute-quotes": "always",
         "font-weight-notation": "named-where-possible",
         "function-url-no-scheme-relative": true,
+        "value-keyword-case": [
+            "lower",
+            {
+                "ignoreProperties": [ "/^\\$[\\w|-]*-font$/" ]
+            }
+        ],
         "unit-blacklist": ["pt"],
         "scss/at-mixin-argumentless-call-parentheses": "never"
     }

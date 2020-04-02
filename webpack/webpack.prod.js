@@ -34,7 +34,6 @@ module.exports = merge(common, {
                         loader: "html-loader",
                         options: {
                             minimize: true,
-                            removeComments: true,
                         },
                     },
                 ],
