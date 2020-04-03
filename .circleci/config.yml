@@ -81,9 +81,26 @@ jobs:
           command: |
             docker run -d -p 5000:5000 "dylantreisman.com:$CIRCLE_SHA1"
             ssh remote-docker "curl --retry 5 --retry-delay 5 -v localhost:5000 | grep '<title>Dylan Treisman</title>'"
+  npm_audit:
+    executor: node
+    steps:
+      - checkout
+      - run:
+          name: Audit Dependency Vulnerabilities
+          command: npm audit --audit-level=low --json
+  npm_outdated:
+    executor: node
+    steps:
+      - checkout
+      - restore_node_modules
+      - run:
+          name: Check Outdated Dependencies
+          command: |
+            set +o pipefail
+            npm outdated --json | jq -e '., length <= 3'
 workflows:
   version: 2.1
-  ci:
+  commit:
     jobs:
       - node_modules
       - lint_js:
@@ -96,3 +113,14 @@ workflows:
       - test_docker:
           requires:
             - build_docker
+  daily:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - npm_audit
+      - npm_outdated
