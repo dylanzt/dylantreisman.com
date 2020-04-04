@@ -7,7 +7,7 @@ RUN npm run build
 FROM node:alpine AS release
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
-RUN npm install -g serve
+RUN npm install -g serve@11.3.0
 WORKDIR /app
 COPY --from=build app/package*.json ./
 COPY --from=build app/dist ./dist

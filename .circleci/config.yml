@@ -54,6 +54,14 @@ jobs:
       - run:
           name: Lint Styles
           command: npm run stylelint
+  lint_dockerfile:
+    docker:
+      - image: hadolint/hadolint
+    steps:
+      - checkout
+      - run:
+          name: Lint Dockerfile
+          command: hadolint Dockerfile
   build_docker:
     executor: node
     steps:
@@ -113,6 +121,7 @@ workflows:
       - test_docker:
           requires:
             - build_docker
+      - lint_dockerfile
   daily:
     triggers:
       - schedule:
