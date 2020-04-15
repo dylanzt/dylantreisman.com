@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@1.0.0
 executors:
   node:
     docker:
@@ -89,6 +91,19 @@ jobs:
           command: |
             docker run -d -p 5000:5000 "dylantreisman.com:$CIRCLE_SHA1"
             ssh remote-docker "curl --retry 5 --retry-delay 5 -v localhost:5000 | grep '<title>Dylan Treisman</title>'"
+  push_docker:
+    executor: aws-cli/default
+    steps:
+      - checkout
+      - aws-cli/setup
+      - restore_docker_image
+      - run:
+          name: Push Docker Image to ECR
+          command: |
+            aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin $ECR_REGISTRY
+            docker tag "dylantreisman.com:$CIRCLE_SHA1" "$ECR_REGISTRY:$CIRCLE_SHA1"
+            docker tag "dylantreisman.com:$CIRCLE_SHA1" "$ECR_REGISTRY:latest"
+            docker push "$ECR_REGISTRY"
   npm_audit:
     executor: node
     steps:
@@ -122,6 +137,15 @@ workflows:
           requires:
             - build_docker
       - lint_dockerfile
+      - push_docker:
+          filters:
+            branches:
+              only: master
+          requires:
+            - lint_js
+            - lint_styles
+            - lint_dockerfile
+            - test_docker
   daily:
     triggers:
       - schedule:
