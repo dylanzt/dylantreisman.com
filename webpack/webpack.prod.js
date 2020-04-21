@@ -28,17 +28,6 @@ module.exports = merge(common, {
     module: {
         rules: [
             {
-                test: /\.html$/i,
-                use: [
-                    {
-                        loader: "html-loader",
-                        options: {
-                            minimize: true,
-                        },
-                    },
-                ],
-            },
-            {
                 test: /\.(css|scss)$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
