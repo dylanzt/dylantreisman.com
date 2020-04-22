@@ -9,6 +9,7 @@
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint --ext .js --ext .jsx ./src ./config ./webpack",
     "eslint:fix": "eslint --ext .js --ext .jsx --fix ./src ./config ./webpack",
+    "eslint:junit": "eslint --format junit --ext .js --ext .jsx ./src ./config ./webpack",
     "stylelint": "stylelint './src/**/*.{css,scss}'",
     "stylelint:fix": "stylelint --fix './src/**/*.{css,scss}'",
     "dev": "webpack-dev-server --open --history-api-fallback --config webpack/webpack.dev.js",

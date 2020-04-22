@@ -47,7 +47,9 @@ jobs:
       - restore_node_modules
       - run:
           name: Lint JavaScript
-          command: npm run eslint
+          command: mkdir -p reports/eslint/ && npm run -s eslint:junit > reports/eslint/results.xml
+      - store_test_results:
+          path: reports
   lint_styles:
     executor: node
     steps:
