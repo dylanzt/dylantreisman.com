@@ -21,6 +21,21 @@ commands:
       - run:
           name: Load Docker Image
           command: docker load < dylantreisman.com.tar
+  execute_and_store_tests:
+    description: "Run a test and store the results"
+    parameters:
+      test_name:
+        type: string
+        default: "Test"
+      test_command:
+        type: string
+        default: "test"
+    steps:
+      - run:
+          name: << parameters.test_name >>
+          command: mkdir -p reports/<< parameters.test_command >>/ && npm run -s << parameters.test_command >>:junit > reports/<< parameters.test_command >>/results.xml
+      - store_test_results:
+          path: reports
 jobs:
   node_modules:
     executor: node
@@ -45,11 +60,9 @@ jobs:
     steps:
       - checkout
       - restore_node_modules
-      - run:
-          name: Lint JavaScript
-          command: mkdir -p reports/eslint/ && npm run -s eslint:junit > reports/eslint/results.xml
-      - store_test_results:
-          path: reports
+      - execute_and_store_tests:
+          test_name: Lint JavaScript
+          test_command: eslint
   lint_styles:
     executor: node
     steps:
