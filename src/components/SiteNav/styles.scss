@@ -4,8 +4,43 @@
     display: none;
 
     @include from($M) {
-        display: flex;
-        justify-content: center;
+        display: block;
         flex: 1;
     }
+}
+
+.navList {
+    margin: 0;
+    padding: 0;
+
+    @include from($M) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.navListItem {
+    list-style-type: none;
+}
+
+.navLink {
+    @include text-hover-shadow($site-header-mobile);
+    @include font-size(18px);
+
+    color: $main-colour;
+    text-align: center;
+    margin: 0 20px;
+    white-space: nowrap;
+
+    @include from($M) {
+        @include text-hover-shadow($site-header-desktop);
+    }
+
+    @include from($L) {
+        @include font-size(24px);
+    }
+}
+
+.navLinkActive {
+    text-decoration: underline;
 }
