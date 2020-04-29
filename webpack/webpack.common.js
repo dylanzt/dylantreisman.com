@@ -33,7 +33,7 @@ module.exports = {
         }),
     ],
     resolve: {
-        extensions: [".jsx", ".js", ".scss"],
+        extensions: [ ".jsx", ".js", ".scss" ],
         alias: {
             src,
             Assets: path.resolve(src, "./assets/"),

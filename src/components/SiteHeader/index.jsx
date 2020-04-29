@@ -38,8 +38,8 @@ class SiteHeader extends React.Component {
         return (
             <header className={cx({
                 root: true,
-                withShadow: !this.state.topOfPage},
-            )}>
+                withShadow: !this.state.topOfPage,
+            })}>
                 <div className={styles.titleWrapper}>
                     <SiteTitle />
                 </div>
