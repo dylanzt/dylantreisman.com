@@ -1,6 +1,16 @@
 @import "Styling/presets";
 
 .mainContentWrapper {
-    margin-top: $site-header-desktop;
-    padding: 8px 20% 8px;
+    margin-top: $site-header-mobile;
+    padding: 8px 8px 8px;
+
+    @include from($M) {
+        margin-top: $site-header-desktop;
+        padding: 8px 10% 8px;
+        // max-width: 800px;
+    }
+
+    @include from($XL) {
+        padding: 8px 20% 8px;
+    }
 }

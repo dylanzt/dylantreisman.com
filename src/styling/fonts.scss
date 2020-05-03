@@ -1,2 +1,7 @@
-$site-title-font: "Courier New", Courier, monospace;
-$standard-font: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+@mixin site-title-font {
+    font-family: "Courier New", Courier, monospace;
+}
+
+@mixin standard-font {
+    font-family: Montserrat, Roboto, Helvetica, sans-serif;
+}

@@ -1,9 +1,9 @@
 @import "Styling/presets";
 
 .root {
+    @include site-title-font;
     @include font-size(25px);
 
-    font-family: $site-title-font;
     text-align: center;
 
     @include from($XS) {

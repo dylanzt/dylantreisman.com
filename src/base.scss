@@ -2,8 +2,9 @@
 @import "./noscript";
 
 html {
-    font-family: $standard-font;
-    font-size: 112.5%;
+    @include standard-font;
+
+    font-size: 125%;
 }
 
 body {

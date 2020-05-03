@@ -1,12 +1,11 @@
 import React from "react";
 
-import styles from "./styles";
 import Lipsum from "./Lipsum";
 
 const ComingSoon = () => (
     <div>
         <h1>Coming Soon...</h1>
-        <p className={styles.text}>
+        <p>
             Welcome to my personal website.
             It&apos;s currently under active development.
             You can view the source
@@ -14,7 +13,7 @@ const ComingSoon = () => (
                 &nbsp;here
             </a>.
         </p>
-        {featureFlag.lipsum && (<Lipsum className={styles.text} />)}
+        {featureFlag.lipsum && (<Lipsum />)}
     </div>
 );
 
