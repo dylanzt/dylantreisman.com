@@ -1,8 +1,14 @@
 @import "Styling/presets";
 
 .root {
-    height: $site-footer-desktop;
-    padding: 0 $site-padding-desktop;
+    margin-top: 16px;
+    height: $site-footer-mobile;
     background-color: $main-colour-dark;
     color: $footer-text-colour;
+    border-top: 5px solid $main-colour;
+
+    @include from($M) {
+        height: $site-footer-desktop;
+        padding: 0 $site-padding-desktop;
+    }
 }
