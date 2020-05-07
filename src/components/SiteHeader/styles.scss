@@ -40,7 +40,7 @@ $hamburger-width: 40px;
         z-index: -1; // Allow clicking of links in header
         opacity: 0;
         content: "";
-        box-shadow: 5px 15px 50px rgba(55, 55, 55, 0.2);
+        box-shadow: 0 15px 50px rgba(55, 55, 55, 0.2);
         transition: opacity 0.2s ease-in-out;
     }
 
