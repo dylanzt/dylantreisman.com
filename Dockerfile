@@ -1,7 +1,8 @@
 FROM node:carbon AS build
 WORKDIR /app
-COPY . ./
+COPY package*.json ./
 RUN npm ci
+COPY . ./
 RUN npm run build
 
 FROM node:alpine AS release
