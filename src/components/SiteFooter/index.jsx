@@ -4,7 +4,13 @@ import styles from "./styles";
 
 const SiteFooter = () => (
     <footer className={styles.root}>
-        &copy; 2019-{(new Date()).getFullYear()} Dylan Treisman
+        <div className={styles.mainFooter}>
+            Hello world
+        </div>
+        <div className={styles.subFooter}>
+            &copy; 2019-{(new Date()).getFullYear()} Dylan Treisman
+            <a href="#top">Back to top</a>
+        </div>
     </footer>
 );
 

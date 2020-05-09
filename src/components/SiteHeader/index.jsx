@@ -42,6 +42,7 @@ class SiteHeader extends React.Component {
             })}>
                 <div className={styles.titleWrapper}>
                     <SiteTitle />
+                    <a id="top" />
                 </div>
                 <SiteNav />
                 <Hamburger />

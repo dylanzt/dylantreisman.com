@@ -9,6 +9,21 @@
 
     @include from($M) {
         height: $site-footer-desktop;
+    }
+}
+
+.mainFooter {
+    background-color: #444;
+
+    @include from($M) {
+        padding: 8px $site-padding-desktop;
+    }
+}
+
+.subFooter {
+    background-color: $main-colour-dark;
+
+    @include from($M) {
         padding: 0 $site-padding-desktop;
     }
 }
