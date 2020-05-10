@@ -4,7 +4,7 @@ orbs:
 executors:
   node:
     docker:
-      - image: circleci/node:carbon
+      - image: circleci/node:lts
 commands:
   restore_node_modules:
     description: "Restore node_modules from cache"
