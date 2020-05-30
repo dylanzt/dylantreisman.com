@@ -6,12 +6,11 @@ COPY . ./
 RUN npm run build
 
 FROM node:lts-alpine AS release
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-ENV PATH=$PATH:/home/node/.npm-global/bin
-RUN npm install -g serve@11.3.1
 WORKDIR /app
 COPY --from=build app/package*.json ./
+RUN npm ci --only=production
 COPY --from=build app/dist ./dist
+COPY --from=build app/server.js ./
 EXPOSE 5000
 USER node
-CMD ["serve", "-s", "dist"]
+CMD ["node", "server.js"]

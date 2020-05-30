@@ -2,7 +2,7 @@
   "name": "dylantreisman.com",
   "version": "1.0.0",
   "description": "Personal website of Dylan Treisman",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker": "docker-compose up --build &",
@@ -11,9 +11,9 @@
     "eslint:fix": "eslint --ext .js --ext .jsx --fix ./src ./config ./webpack",
     "stylelint": "stylelint './src/**/*.{css,scss}'",
     "stylelint:fix": "stylelint --fix './src/**/*.{css,scss}'",
-    "serve": "serve -s dist",
+    "dev": "webpack-dev-server --open --history-api-fallback --config webpack/webpack.dev.js",
     "build": "webpack --config webpack/webpack.prod.js",
-    "start": "webpack-dev-server --open --history-api-fallback --config webpack/webpack.dev.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/dylanzt/dylantreisman.com#readme",
   "dependencies": {
-    "serve": "^11.3.1"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
