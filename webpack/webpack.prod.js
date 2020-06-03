@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-
+const CopyPlugin = require("copy-webpack-plugin");
 const common = require("./webpack.common.js");
 const config = require("../config/config.prod.js");
 
@@ -60,5 +60,10 @@ module.exports = merge(common, {
             "featureFlag": JSON.stringify(config.featureFlag),
         }),
         new MiniCssExtractPlugin(),
+        new CopyPlugin({
+            patterns: [
+                { from: "robots.txt", to: "." },
+            ],
+        }),
     ],
 });
