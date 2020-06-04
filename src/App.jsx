@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom";
 import "normalize.css";
 
@@ -7,6 +8,17 @@ import Home from "Views/Home";
 import Resources from "Views/Resources";
 import Error from "Views/Error";
 import ComingSoon from "Components/ComingSoon";
+
+const helmet = (
+    <Helmet defaultTitle="Dylan Treisman" titleTemplate="%s | Dylan Treisman">
+        <meta
+            name="description"
+            content="Hey, I'm Dylan Treisman, an IT professional and
+                everything-else amateur. You can find out more about me
+                here."
+        />
+    </Helmet>
+);
 
 const routing = (
     <BrowserRouter>
@@ -27,7 +39,11 @@ class App extends Component {
             return <ComingSoon />;
         }
         return (
-            routing
+            <div>
+                { helmet }
+                { routing }
+            </div>
+
         );
     }
 }
