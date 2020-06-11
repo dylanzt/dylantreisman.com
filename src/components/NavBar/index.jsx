@@ -11,7 +11,7 @@ const menu = [
     { name: "Photography" },
 ];
 
-const SiteNav = () => (
+const NavBar = () => (
     <nav className={styles.root}>
         <ul className={styles.navList}>
             {menu.map((item) => (
@@ -30,4 +30,4 @@ const SiteNav = () => (
     </nav>
 );
 
-export default SiteNav;
+export default NavBar;
