@@ -13,6 +13,10 @@ $hamburger-height: 30px;
     background-repeat: no-repeat;
     cursor: pointer;
 
+    &.close {
+        background-image: url("~Assets/cross.svg");
+    }
+
     @include from($M) {
         display: none;
     }
