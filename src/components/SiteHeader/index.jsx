@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 
 import styles from "./styles";
@@ -9,8 +10,8 @@ import Hamburger from "Components/Hamburger";
 const cx = classNames.bind(styles);
 
 class SiteHeader extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             topOfPage: true,
         };
@@ -44,10 +45,18 @@ class SiteHeader extends React.Component {
                     <SiteTitle />
                 </div>
                 <NavBar />
-                <Hamburger />
+                <Hamburger
+                    isDrawerOpen={this.props.isDrawerOpen}
+                    hamburgerFn={this.props.hamburgerFn}
+                />
             </header>
         );
     }
 }
+
+SiteHeader.propTypes = {
+    isDrawerOpen: PropTypes.bool.isRequired,
+    hamburgerFn: PropTypes.func.isRequired,
+};
 
 export default SiteHeader;

@@ -1,39 +1,28 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 
 import styles from "./styles";
 
 const cx = classNames.bind(styles);
-class Hamburger extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            isTrayOpen: false,
-        };
-        this.handleClick = this.handleClick.bind(this);
-    }
 
-    handleClick() {
-        this.setState(state => ({
-            isTrayOpen: !state.isTrayOpen,
-        }));
-    }
+const Hamburger = (props) => (
+    <button
+        onClick={props.hamburgerFn}
+        className={cx({
+            hamburger: true,
+            close: props.isDrawerOpen,
+        })}
+    >
+        <span className={styles.hamburgerText}>
+            <span className={styles.screenReaderText}>Open Menu</span>
+        </span>
+    </button>
+);
 
-    render() {
-        return (
-            <button
-                onClick={this.handleClick}
-                className={cx({
-                    hamburger: true,
-                    close: this.state.isTrayOpen,
-                })}
-            >
-                <span className={styles.hamburgerText}>
-                    <span className={styles.screenReaderText}>Open Menu</span>
-                </span>
-            </button>
-        );
-    }
-}
+Hamburger.propTypes = {
+    isDrawerOpen: PropTypes.bool.isRequired,
+    hamburgerFn: PropTypes.func.isRequired,
+};
 
 export default Hamburger;

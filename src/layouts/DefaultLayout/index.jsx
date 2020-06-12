@@ -6,16 +6,37 @@ import SiteHeader from "Components/SiteHeader";
 import SiteFooter from "Components/SiteFooter";
 import NavDrawer from "Components/NavDrawer";
 
-const DefaultLayout = (props) => (
-    <div>
-        <SiteHeader />
-        <NavDrawer />
-        <main className={styles.mainContentWrapper}>
-            {props.children}
-        </main>
-        <SiteFooter />
-    </div>
-);
+class DefaultLayout extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            isDrawerOpen: false,
+        };
+        this.toggleDrawer = this.toggleDrawer.bind(this);
+    }
+
+    toggleDrawer() {
+        this.setState(state => ({
+            isDrawerOpen: !state.isDrawerOpen,
+        }));
+    }
+
+    render() {
+        return(
+            <div>
+                <SiteHeader
+                    isDrawerOpen={this.state.isDrawerOpen}
+                    hamburgerFn={this.toggleDrawer}
+                />
+                <NavDrawer isDrawerOpen={this.state.isDrawerOpen} />
+                <main className={styles.mainContentWrapper}>
+                    {this.props.children}
+                </main>
+                <SiteFooter />
+            </div>
+        );
+    }
+}
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
