@@ -1,22 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import styles from "./styles";
+import { hamburgerProps } from "src/propTypes";
 
-const Drawer = (
+const createDrawer = (onClick) => (
     <div className={styles.root}>
         <div className={styles.drawer}>
             Some menu content <br/>
             A second option <br/>
             More menu <br/>
         </div>
+        <div className={styles.overlay} onClick={onClick} />
     </div>
 );
 
-const NavDrawer = (props) => props.isDrawerOpen ? Drawer : null;
+const NavDrawer = (props) =>
+    props.isDrawerOpen ? createDrawer(props.toggleDrawer) : null;
 
-NavDrawer.propTypes = {
-    isDrawerOpen: PropTypes.bool.isRequired,
-};
+NavDrawer.propTypes = hamburgerProps;
 
 export default NavDrawer;

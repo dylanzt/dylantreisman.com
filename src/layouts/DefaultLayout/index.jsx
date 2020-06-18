@@ -22,13 +22,15 @@ class DefaultLayout extends React.Component {
     }
 
     render() {
+        const hamburgerProps = {
+            isDrawerOpen: this.state.isDrawerOpen,
+            toggleDrawer: this.toggleDrawer,
+        };
+
         return(
             <div>
-                <SiteHeader
-                    isDrawerOpen={this.state.isDrawerOpen}
-                    hamburgerFn={this.toggleDrawer}
-                />
-                <NavDrawer isDrawerOpen={this.state.isDrawerOpen} />
+                <SiteHeader hamburgerProps={hamburgerProps} />
+                <NavDrawer {...hamburgerProps} />
                 <main className={styles.mainContentWrapper}>
                     {this.props.children}
                 </main>

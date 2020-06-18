@@ -6,6 +6,7 @@ import styles from "./styles";
 import SiteTitle from "Components/SiteTitle";
 import NavBar from "Components/NavBar";
 import Hamburger from "Components/Hamburger";
+import { hamburgerProps } from "src/propTypes";
 
 const cx = classNames.bind(styles);
 
@@ -45,18 +46,14 @@ class SiteHeader extends React.Component {
                     <SiteTitle />
                 </div>
                 <NavBar />
-                <Hamburger
-                    isDrawerOpen={this.props.isDrawerOpen}
-                    hamburgerFn={this.props.hamburgerFn}
-                />
+                <Hamburger {...this.props.hamburgerProps} />
             </header>
         );
     }
 }
 
 SiteHeader.propTypes = {
-    isDrawerOpen: PropTypes.bool.isRequired,
-    hamburgerFn: PropTypes.func.isRequired,
+    hamburgerProps: PropTypes.shape(hamburgerProps),
 };
 
 export default SiteHeader;
