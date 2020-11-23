@@ -3,9 +3,10 @@
 .root {
     margin-top: 16px;
     height: $site-footer-mobile;
-    background-color: $main-colour-dark;
-    color: $footer-text-colour;
+    background-color: $site-background-colour;
+    // color: $footer-text-colour;
     border-top: 5px solid $main-colour;
+    box-shadow: inset 0 15px 50px rgba(55, 55, 55, 0.4);
 
     @include from($M) {
         height: $site-footer-desktop;
@@ -13,7 +14,8 @@
 }
 
 .mainFooter {
-    background-color: #444;
+    // background-color: #ddd;
+
 
     @include from($M) {
         padding: 8px $site-padding-desktop;
@@ -21,7 +23,6 @@
 }
 
 .subFooter {
-    background-color: $main-colour-dark;
 
     @include from($M) {
         padding: 0 $site-padding-desktop;
