@@ -2,19 +2,12 @@ import React from "react";
 
 import styles from "./styles";
 import { NavLink } from "react-router-dom";
+import NavWrapper from "Components/NavWrapper";
 
-const menu = [
-    // { name: "Home" },
-    { name: "Curriculum Vitae", target: "cv" },
-    { name: "Resources" },
-    { name: "Writings" },
-    { name: "Photography" },
-];
-
-const NavBar = () => (
+const NavBar = (props) => (
     <nav className={styles.root}>
         <ul className={styles.navList}>
-            {menu.map((item) => (
+            {props.menuList.map((item) => (
                 <li key={item.name} className={styles.navListItem}>
                     <NavLink
                         exact
@@ -30,4 +23,4 @@ const NavBar = () => (
     </nav>
 );
 
-export default NavBar;
+export default NavWrapper(NavBar);
