@@ -15,12 +15,10 @@ module.exports = merge(common, {
                     {
                         loader: "css-loader",
                         options: {
-                            sourceMap: true,
                             importLoaders: 1,
                             modules: {
                                 mode: "local",
                                 localIdentName: "[path][local]",
-                                context: "src",
                             },
                         },
                     },

@@ -38,7 +38,7 @@ module.exports = merge(common, {
                             modules: {
                                 mode: "local",
                                 localIdentName: "[hash:base64]",
-                                hashPrefix: "dylantreisman.com",
+                                localIdentHashPrefix: "dylantreisman.com",
                             },
                         },
                     },
