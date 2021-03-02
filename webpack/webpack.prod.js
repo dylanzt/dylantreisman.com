@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -14,9 +13,7 @@ module.exports = merge(common, {
     mode: "production",
     optimization: {
         minimizer: [
-            new TerserJSPlugin({
-                sourceMap: true,
-            }),
+            new TerserJSPlugin(),
             new OptimizeCSSAssetsPlugin({
                 cssProcessorOptions: {
                     map: {
@@ -57,7 +54,6 @@ module.exports = merge(common, {
     },
     devtool: "source-map",
     plugins: [
-        new CleanWebpackPlugin(),
         new webpack.DefinePlugin({
             "featureFlag": JSON.stringify(config.featureFlag),
         }),
@@ -68,4 +64,7 @@ module.exports = merge(common, {
             ],
         }),
     ],
+    output: {
+        clean: true,
+    },
 });
