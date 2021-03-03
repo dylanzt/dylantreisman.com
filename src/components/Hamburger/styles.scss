@@ -9,7 +9,7 @@ $hamburger-height: 30px;
     position: relative;
     border: none;
     background: none;
-    background-image: url("~Assets/hamburger.svg");
+    background-image: url("Assets/hamburger.svg");
     background-repeat: no-repeat;
 
     @include from($M) {
